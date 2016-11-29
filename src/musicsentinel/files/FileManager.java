@@ -78,7 +78,7 @@ public class FileManager {
     }
     
     public String getMusicFilePath(){
-        String path = C.FILE_PATH+C.MUSIC_FILE_NAME+".mp3";
+        String path = C.FILE_PATH+C.MUSIC_FILE_NAME+C.MUSIC_EXTENSION;
     
         File mFile = new File(path);
         if(mFile.exists()){
@@ -90,7 +90,7 @@ public class FileManager {
     
     public static void saveTextFile(String fileName,String content){
     
-        String path = C.FILE_PATH+fileName+".txt";
+        String path = C.FILE_PATH+fileName+C.TEXT_EXTENSION;
         File mFile = new File(path); 
         if(mFile.exists()){
             try {
@@ -110,7 +110,7 @@ public class FileManager {
     
     public static String getTextFileContent(String fileName){
         try {
-            String path = C.FILE_PATH+fileName+".txt";
+            String path = C.FILE_PATH+fileName+C.TEXT_EXTENSION;
             File mTextFile = new File(path);
             
             if(!mTextFile.exists()){

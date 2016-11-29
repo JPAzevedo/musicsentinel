@@ -200,7 +200,6 @@ public class MusicPlayerManager extends javax.swing.JFrame implements ConsoleSta
 
         if (result == JFileChooser.APPROVE_OPTION) {
             File selectedFile = jFileChooser.getSelectedFile();
-            System.out.println("Selected file: " + selectedFile.getAbsolutePath());
             etChoose.setText(selectedFile.getAbsolutePath());
         }
     }//GEN-LAST:event_bFileActionPerformed
@@ -214,10 +213,7 @@ public class MusicPlayerManager extends javax.swing.JFrame implements ConsoleSta
 
         String selectedPath = etChoose.getText();
         String ext = FileManager.getFileExtension(selectedPath);
-        
-        System.out.println("extension: "+ext);
-        System.out.println("filepath: "+selectedPath);
-
+      
         if (ext.length() == C.ACCEPTED_EXTENSION.length() && ext.contains(C.ACCEPTED_EXTENSION)) {
             try {
                 FileManager.copyFile(new File(selectedPath), new File(C.FILE_PATH + C.MUSIC_FILE_NAME + "." + ext));

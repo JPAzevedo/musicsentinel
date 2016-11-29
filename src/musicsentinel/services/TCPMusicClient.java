@@ -25,13 +25,9 @@ public class TCPMusicClient {
     
     private final int M_SECONDS = 15*1000;
     
-    private String ip = "192.168.1.67";
+    private String ip = "";
     
-    private String port = "2000";
-    
-    private String ip_clone = "192.168.1.67";
-    
-    private String port_clone = "2000";
+    private String port = "";
     
     private Socket mSocket;
     
@@ -83,11 +79,11 @@ public class TCPMusicClient {
 
     private void initClientServer(ConsoleStatus listener){
         try {
-            int portAddress = Integer.parseInt(port_clone);
+            int portAddress = Integer.parseInt(port);
             
             mSocket = new Socket(); 
             mSocket.setSoTimeout(30000);
-            mSocket.connect(new InetSocketAddress(ip_clone,portAddress),SOCKET_TIMEOUT);
+            mSocket.connect(new InetSocketAddress(ip,portAddress),SOCKET_TIMEOUT);
             
         } catch (IOException ex) {
             Logger.getLogger(TCPMusicClient.class.getName()).log(Level.SEVERE, null, ex);

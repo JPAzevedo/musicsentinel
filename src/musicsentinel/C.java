@@ -29,4 +29,7 @@ public class C {
     
     public static final String STATUS_OFFLINEMESSAGE = "Please push the start button in order to start the program";
     
+    public static final String TEXT_EXTENSION = ".txt"; 
+    
+    public static final String MUSIC_EXTENSION = ".mp3";
 }
