@@ -16,6 +16,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import musicsentinel.C;
 
 /**
  *
@@ -109,9 +110,11 @@ public class TCPMusicClient {
                                 serverText = serverText.concat(String.valueOf((char) dataInputStream.read()));
                             }
                             if (serverText.length() > 0) {
-                                System.out.println("Message: " + serverText + "Length: " + serverText.length());
+                                
+                                if(C.DEBUG)
+                                    System.out.println("Message: " + serverText + "Length: " + serverText.length());
 
-                                if (serverText.toLowerCase().contains("moving")) {
+                                if (serverText.toLowerCase().contains(C.HOST_MESSAGE)) {
                                     startMusic();
                                 }
                             }

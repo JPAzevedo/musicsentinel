@@ -32,4 +32,8 @@ public class C {
     public static final String TEXT_EXTENSION = ".txt"; 
     
     public static final String MUSIC_EXTENSION = ".mp3";
+    
+    public static final Boolean DEBUG = false;
+    
+    public static final String HOST_MESSAGE = "moving"; 
 }
