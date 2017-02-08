@@ -33,7 +33,7 @@ public class C {
     
     public static final String MUSIC_EXTENSION = ".mp3";
     
-    public static final Boolean DEBUG = false;
+    public static final Boolean DEBUG = true;
     
     public static final String HOST_MESSAGE = "moving"; 
 }

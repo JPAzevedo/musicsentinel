@@ -90,9 +90,14 @@ public class FileManager {
     
     public static void saveTextFile(String fileName,String content){
     
+        File filePath = new File(C.FILE_PATH);
+        if(!filePath.exists()){
+            createPath(filePath);
+        }
+            
         String path = C.FILE_PATH+fileName+C.TEXT_EXTENSION;
         File mFile = new File(path); 
-        if(mFile.exists()){
+        if(mFile.exists() && content!=null){
             try {
                 Files.delete(Paths.get(path));
             } catch (IOException ex) {
@@ -106,6 +111,10 @@ public class FileManager {
             Logger.getLogger(FileManager.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+    }
+    
+    private static void createPath(File filePath){
+        filePath.mkdirs();
     }
     
     public static String getTextFileContent(String fileName){

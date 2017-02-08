@@ -101,7 +101,7 @@ public class TCPMusicClient {
                 dataInputStream = new DataInputStream(mSocket.getInputStream());
                 dataOutputStream = new DataOutputStream(mSocket.getOutputStream());
                 
-                dataOutputStream.writeChars("***** Starting communnication    *****");
+                //dataOutputStream.writeChars("***** Starting communnication    *****");
                 long time = System.currentTimeMillis();
                         while (true) {
                             serverText = "";
